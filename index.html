@@ -147,13 +147,13 @@
 /* ===== CONFIGURACIÓN: pegá acá tus links de compra (Hotmart / Shopify / Payhip) y precios ===== */
 const CURRENCY = 'USD';
 const PRODUCTS = [
-  // cat: 'santa' | 'mesa' · img: ruta de la imagen de portada (dejá '' para ver el espacio reservado) · url: link de compra de ESE diseño
+  // cat: 'santa' | 'mesa' · img: imagen de portada; texto 'assets/x.webp' o por idioma {es:'...',en:'...'}; '' = espacio reservado · url: link de compra de ESE diseño
   { id:'santa-letter',  cat:'santa', price:2.99, url:'', img:'', name:{es:'Carta a Papá Noel', en:'Letter to Santa'},            desc:{es:'Carta imprimible para que los niños escriban su pedido. Versión en español e inglés.', en:'Printable letter for kids to write their wish list. Spanish and English versions.'} },
   { id:'santa-nice',    cat:'santa', price:2.99, url:'', img:'', name:{es:'Certificado Lista de Buenos', en:'Nice List Certificate'}, desc:{es:'Diploma de la Lista de Buenos del Polo Norte, listo para imprimir y firmar.', en:'North Pole Nice List diploma, ready to print and sign.'} },
   { id:'santa-envelope',cat:'santa', price:1.99, url:'', img:'', name:{es:'Sobre del Polo Norte', en:'North Pole Envelope'},      desc:{es:'Sobre para recortar, doblar y enviar la carta al Polo Norte.', en:'Cut-and-fold envelope to send the letter to the North Pole.'} },
-  { id:'mesa-1', cat:'mesa', price:3.99, url:'', img:'assets/modelo1-hh.webp', name:{es:'Individual · Estrellas y Copos', en:'Placemat · Stars & Snowflakes'}, desc:{es:'Individual A4 verde y dorado. Reutilizable si lo plastificás.', en:'Green & gold A4 placemat. Reusable when laminated.'} },
-  { id:'mesa-2', cat:'mesa', price:3.99, url:'', img:'assets/modelo2-hh.webp', name:{es:'Individual · Guirnalda Festiva', en:'Placemat · Festive Garland'},    desc:{es:'Individual A4 en tono crema con guirnalda.', en:'Cream A4 placemat with garland.'} },
-  { id:'mesa-3', cat:'mesa', price:3.99, url:'', img:'assets/modelo3-hh.webp', name:{es:'Individual · Bosque de Navidad', en:'Placemat · Christmas Forest'},  desc:{es:'Individual A4 crema con bosque nevado.', en:'Cream A4 placemat with snowy forest.'} },
+  { id:'mesa-1', cat:'mesa', price:3.99, url:'', img:{es:'assets/modelo1-es.webp',en:'assets/modelo1-hh.webp'}, name:{es:'Individual · Estrellas y Copos', en:'Placemat · Stars & Snowflakes'}, desc:{es:'Individual A4 verde y dorado. Reutilizable si lo plastificás.', en:'Green & gold A4 placemat. Reusable when laminated.'} },
+  { id:'mesa-2', cat:'mesa', price:3.99, url:'', img:{es:'assets/modelo2-es.webp',en:'assets/modelo2-hh.webp'}, name:{es:'Individual · Guirnalda Festiva', en:'Placemat · Festive Garland'},    desc:{es:'Individual A4 en tono crema con guirnalda.', en:'Cream A4 placemat with garland.'} },
+  { id:'mesa-3', cat:'mesa', price:3.99, url:'', img:{es:'assets/modelo3-es.webp',en:'assets/modelo3-hh.webp'}, name:{es:'Individual · Bosque de Navidad', en:'Placemat · Christmas Forest'},  desc:{es:'Individual A4 crema con bosque nevado.', en:'Cream A4 placemat with snowy forest.'} },
 ];
 
 const T = {
@@ -186,7 +186,8 @@ function setCat(c){cat=c;render();}
 function goHash(){const h=location.hash.slice(1);if(!h)return;const p=PRODUCTS.find(x=>x.id===h);if(p){cat=p.cat;render();}const e=document.getElementById(h);if(e)setTimeout(()=>{e.scrollIntoView({behavior:'smooth',block:'center'});e.classList.add('ring-4','ring-gold');},100);}
 addEventListener('hashchange',goHash);
 function art(p){
-  if(p.img) return `<img src="${p.img}" alt="${p.name[lang]}" loading="lazy" class="w-full h-full object-cover">`;
+  const im=(p.img&&typeof p.img==='object')?p.img[lang]:p.img;
+  if(im) return `<img src="${im}" alt="${p.name[lang]}" loading="lazy" class="w-full h-full object-cover">`;
   return `<div class="w-full h-full flex flex-col items-center justify-center bg-cream-dark text-pine text-center p-4"><div class="font-serif text-3xl mb-1">${p.name[lang]}</div><div class="text-xs tracking-widest uppercase text-gold-dark">${t('soon_prev')}</div></div>`;
 }
 function render(){
