@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Printables &amp; Co. | Printables</title>
+  <meta name="description" content="Individuales de mesa navideños imprimibles y reutilizables. Descarga, imprime y plastifica en casa. Formatos A4 y A3." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pine:   { DEFAULT: '#1F4B33', dark: '#163A27', light: '#2A6044' },
+            gold:   { DEFAULT: '#C4A163', light: '#E3CB92', dark: '#9A7B45' },
+            cream:  { DEFAULT: '#F8F4EC', dark: '#EFE8DA', card: '#FBF9F4' },
+            crimson:{ DEFAULT: '#7B2222' },
+            charcoal: '#2E2C2A'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          boxShadow: {
+            gold: '0 8px 20px -6px rgba(154, 123, 69, 0.55)',
+            card: '0 10px 28px -10px rgba(31, 75, 51, 0.35)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body { background-color: #F8F4EC;
+      background-image: radial-gradient(rgba(46,44,42,.03) 1px, transparent 0), radial-gradient(rgba(196,161,99,.05) 1px, transparent 0);
+      background-size: 24px 24px; background-position: 0 0, 12px 12px; }
+
+    .hero { background: #1B4430 url('assets/hero-fondo.jpg') center 62% / cover no-repeat; }
+    .hero-photo { clip-path: none; }
+    @media (min-width: 1024px) { .hero-photo { clip-path: circle(92% at 100% 50%); } }
+
+    .gold-text {
+      background: linear-gradient(180deg, #F2DDA6 0%, #D6B06A 60%, #BE9650 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,.4));
+    }
+    .btn-gold { background: linear-gradient(135deg, #D8BC82 0%, #C4A163 50%, #A98649 100%); transition: all .2s ease; }
+    .btn-gold:hover { filter: brightness(1.07); transform: translateY(-1px); }
+    .a4 { aspect-ratio: 297 / 210; }
+    .nav-link { position: relative; padding: .5rem 0; }
+    .nav-link:hover { color: #9A7B45; }
+    .nav-link.active { color: #1F4B33; }
+    .nav-link.active::after { content:''; position:absolute; left:0; right:0; bottom:0; height:2px; background:#C4A163; }
+    .icon-gold { width: 4rem; height: 4rem; margin-bottom: 1rem; }
+
+    @page { size: A4 landscape; margin: 0; }
+    @media print {
+      body * { visibility: hidden; }
+      #print-area, #print-area * { visibility: visible; }
+      #print-area { position: fixed; inset: 0; width: 100vw !important; height: 100vh !important; max-width: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+      #print-area img { width: 100%; height: 100%; object-fit: fill; }
+    }
+  </style>
+</head>
+
+<body class="text-charcoal font-sans antialiased selection:bg-gold/30 selection:text-pine">
+
+<header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b border-gold/30">
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-8 flex items-center justify-between h-20 sm:h-24">
+    <a href="#inicio" class="block shrink-0"><img src="assets/logo-gold.webp" alt="Printables & Co." class="h-16 sm:h-[76px] w-auto" width="760" height="407"></a>
+    <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium tracking-wide uppercase">
+      <a href="#inicio" class="nav-link active" data-i="nav_home"></a>
+      <a href="#tienda" class="nav-link" data-i="nav_shop"></a>
+      <a href="#como" class="nav-link" data-i="nav_how"></a>
+      <a href="#contacto" class="nav-link" data-i="nav_contact"></a>
+    </nav>
+    <div class="flex items-center gap-2 sm:gap-4">
+      <div class="flex rounded-full border border-gold/60 overflow-hidden text-xs font-bold" role="group" aria-label="Language / Idioma">
+        <button id="lang-es" onclick="setLang('es')" class="px-3 py-2 cursor-pointer">ES</button>
+        <button id="lang-en" onclick="setLang('en')" class="px-3 py-2 cursor-pointer">EN</button>
+      </div>
+      <a href="#tienda" class="btn-gold text-pine font-bold text-[12px] sm:text-[13px] tracking-wider uppercase px-4 sm:px-7 py-3 rounded-full shadow-gold" data-i="nav_cta"></a>
+    </div>
+  </div>
+</header>
+
+<section id="inicio" class="hero relative overflow-hidden">
+  <div class="relative max-w-[1400px] mx-auto lg:min-h-[600px] flex flex-col lg:flex-row items-center">
+    <div class="relative z-10 px-6 sm:px-12 lg:pl-24 py-14 lg:py-20 lg:w-[56%]">
+      <p class="font-serif text-2xl sm:text-4xl text-cream/95 mb-4" data-i="hero_kicker"></p>
+      <h1 class="font-serif font-semibold gold-text text-[2.5rem] sm:text-6xl lg:text-[4rem] leading-[1.06] mb-6" data-i="hero_title"></h1>
+      <p class="text-cream/90 text-base sm:text-lg max-w-xl mb-9" data-i="hero_sub"></p>
+      <a href="#tienda" class="btn-gold text-pine font-semibold text-sm sm:text-base tracking-wide px-9 py-4 rounded-full shadow-gold uppercase inline-block" data-i="hero_cta"></a>
+    </div>
+    <div class="relative lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:w-[50%] h-[300px] sm:h-[420px] lg:h-auto w-full">
+      <img src="assets/hero-mesa.jpg" alt="" class="hero-photo absolute inset-0 w-full h-full object-cover">
+    </div>
+  </div>
+</section>
+
+<section id="tienda" class="max-w-[1400px] mx-auto px-4 sm:px-8 py-16 sm:py-20">
+  <div class="text-center mb-8">
+    <p class="text-gold-dark font-semibold tracking-[.25em] uppercase text-xs mb-3" data-i="shop_kicker"></p>
+    <h2 class="font-serif font-semibold text-pine text-4xl sm:text-5xl mb-3" data-i="shop_title"></h2>
+    <p class="text-charcoal/75 max-w-2xl mx-auto" data-i="shop_sub"></p>
+  </div>
+  <div id="filters" class="flex flex-wrap justify-center gap-2 mb-10"></div>
+  <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  <p class="text-center text-sm text-charcoal/60 mt-10" data-i="soon"></p>
+</section>
+
+<section id="como" class="bg-pine text-cream py-16 sm:py-20">
+  <div class="max-w-[1100px] mx-auto px-4 sm:px-8">
+    <h2 class="font-serif font-semibold gold-text text-4xl sm:text-5xl text-center mb-12" data-i="how_title"></h2>
+    <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <li class="rounded-2xl border border-gold/40 p-6"><div class="font-serif text-5xl gold-text mb-2">1</div><h3 class="font-semibold mb-1" data-i="s1_t"></h3><p class="text-cream/80 text-sm" data-i="s1_d"></p></li>
+      <li class="rounded-2xl border border-gold/40 p-6"><div class="font-serif text-5xl gold-text mb-2">2</div><h3 class="font-semibold mb-1" data-i="s2_t"></h3><p class="text-cream/80 text-sm" data-i="s2_d"></p></li>
+      <li class="rounded-2xl border border-gold/40 p-6"><div class="font-serif text-5xl gold-text mb-2">3</div><h3 class="font-semibold mb-1" data-i="s3_t"></h3><p class="text-cream/80 text-sm" data-i="s3_d"></p></li>
+      <li class="rounded-2xl border border-gold/40 p-6"><div class="font-serif text-5xl gold-text mb-2">4</div><h3 class="font-semibold mb-1" data-i="s4_t"></h3><p class="text-cream/80 text-sm" data-i="s4_d"></p></li>
+    </ol>
+    <div class="mt-10 rounded-2xl bg-cream text-charcoal p-6 sm:p-8">
+      <h3 class="font-serif text-2xl text-pine font-semibold mb-2" data-i="paper_t"></h3>
+      <p class="text-sm sm:text-base" data-i="paper_d"></p>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="max-w-[900px] mx-auto px-4 sm:px-8 py-16 text-center">
+  <h2 class="font-serif font-semibold text-pine text-4xl mb-4" data-i="about_t"></h2>
+  <p class="text-charcoal/80" data-i="about_d"></p>
+</section>
+
+<footer id="contacto" class="bg-pine-dark text-cream/85 py-12 text-center text-sm">
+  <img src="assets/logo-gold.webp" alt="Printables & Co." class="h-16 w-auto mx-auto mb-4">
+  <p class="mb-1"><span data-i="contact"></span> <a href="mailto:hola@tudominio.com" class="underline">hola@tudominio.com</a></p>
+  <p class="text-cream/60" data-i="license"></p>
+</footer>
+
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-pine text-cream px-5 py-3 rounded-full text-sm shadow-card opacity-0 pointer-events-none transition-opacity z-50"></div>
+
+<script>
+/* ===== CONFIGURACIÓN: pegá acá tus links de compra (Hotmart / Shopify / Payhip) y precios ===== */
+const CURRENCY = 'USD';
+const PRODUCTS = [
+  // cat: 'santa' | 'mesa' · img: ruta de la imagen de portada (dejá '' para ver el espacio reservado) · url: link de compra de ESE diseño
+  { id:'santa-letter',  cat:'santa', price:2.99, url:'', img:'', name:{es:'Carta a Papá Noel', en:'Letter to Santa'},            desc:{es:'Carta imprimible para que los niños escriban su pedido. Versión en español e inglés.', en:'Printable letter for kids to write their wish list. Spanish and English versions.'} },
+  { id:'santa-nice',    cat:'santa', price:2.99, url:'', img:'', name:{es:'Certificado Lista de Buenos', en:'Nice List Certificate'}, desc:{es:'Diploma de la Lista de Buenos del Polo Norte, listo para imprimir y firmar.', en:'North Pole Nice List diploma, ready to print and sign.'} },
+  { id:'santa-envelope',cat:'santa', price:1.99, url:'', img:'', name:{es:'Sobre del Polo Norte', en:'North Pole Envelope'},      desc:{es:'Sobre para recortar, doblar y enviar la carta al Polo Norte.', en:'Cut-and-fold envelope to send the letter to the North Pole.'} },
+  { id:'mesa-1', cat:'mesa', price:3.99, url:'', img:'assets/modelo1-hh.webp', name:{es:'Individual · Estrellas y Copos', en:'Placemat · Stars & Snowflakes'}, desc:{es:'Individual A4 verde y dorado. Reutilizable si lo plastificás.', en:'Green & gold A4 placemat. Reusable when laminated.'} },
+  { id:'mesa-2', cat:'mesa', price:3.99, url:'', img:'assets/modelo2-hh.webp', name:{es:'Individual · Guirnalda Festiva', en:'Placemat · Festive Garland'},    desc:{es:'Individual A4 en tono crema con guirnalda.', en:'Cream A4 placemat with garland.'} },
+  { id:'mesa-3', cat:'mesa', price:3.99, url:'', img:'assets/modelo3-hh.webp', name:{es:'Individual · Bosque de Navidad', en:'Placemat · Christmas Forest'},  desc:{es:'Individual A4 crema con bosque nevado.', en:'Cream A4 placemat with snowy forest.'} },
+];
+
+const T = {
+ es:{nav_home:'Inicio',nav_shop:'Tienda',nav_how:'Cómo comprar',nav_contact:'Contacto',nav_cta:'Ver tienda',
+  hero_kicker:'Imprimibles para todo el año',hero_title:'Printables & Co.: imprimibles para celebrar en casa',hero_sub:'Compra, descarga, imprime. Hoy: Navidad, con las cartas para Papá Noel.',hero_cta:'Ver Navidad',
+  shop_kicker:'Colección Navidad',shop_title:'Elegí tus diseños',shop_sub:'Cada diseño se compra por separado. Pagás solo lo que vas a imprimir.',
+  f_all:'Todo',f_santa:'Papá Noel',f_mesa:'Individuales de mesa',buy:'Comprar',soon_prev:'Vista previa próximamente',noLink:'Link de compra aún no configurado',
+  soon:'Próximamente: más temporadas, organización y decoración.',
+  how_title:'Cómo comprar',s1_t:'Elegí tu diseño',s1_d:'Mirá la tienda y tocá «Comprar» en el diseño que quieras.',s2_t:'Pagá seguro',s2_d:'Te llevamos a una página de pago segura con tarjeta u otros medios.',s3_t:'Descargá al instante',s3_d:'Recibís el archivo por email y en la pantalla final, listo para bajar.',s4_t:'Imprimí',s4_d:'Imprimí en tu casa o en una imprenta. Tamaño según cada diseño.',
+  paper_t:'Papel recomendado',paper_d:'Imprimí en papel ilustración (brillante o mate) para colores más vivos y mejor acabado, o en papel obra para un uso más económico. Para los individuales, plastificá para reutilizarlos. Imprimí al 100% (sin «ajustar a página»).',
+  about_t:'Sobre Printables & Co.',about_d:'Diseñamos imprimibles bonitos y prácticos para que celebrar en casa sea fácil. Empezamos con Navidad y vamos a sumar más temporadas.',
+  contact:'Contacto:',license:'Para uso personal. No se permite revender ni compartir los archivos.'},
+ en:{nav_home:'Home',nav_shop:'Shop',nav_how:'How to buy',nav_contact:'Contact',nav_cta:'Shop now',
+  hero_kicker:'Printables for every season',hero_title:'Printables & Co.: printables to celebrate at home',hero_sub:'Buy, download, print. Now: Christmas, with letters to Santa.',hero_cta:'Shop Christmas',
+  shop_kicker:'Christmas collection',shop_title:'Pick your designs',shop_sub:'Every design is sold separately. Pay only for what you will print.',
+  f_all:'All',f_santa:'Santa',f_mesa:'Placemats',buy:'Buy now',soon_prev:'Preview coming soon',noLink:'Checkout link not set yet',
+  soon:'Coming soon: more seasons, planners and decor.',
+  how_title:'How to buy',s1_t:'Choose your design',s1_d:'Browse the shop and tap “Buy now” on the design you like.',s2_t:'Pay securely',s2_d:'You are taken to a secure checkout page with card or other methods.',s3_t:'Download instantly',s3_d:'You get the file by email and on the final screen, ready to download.',s4_t:'Print',s4_d:'Print at home or at a print shop. Size depends on each design.',
+  paper_t:'Recommended paper',paper_d:'Print on coated (illustration) paper, glossy or matte, for vivid colors and a better finish, or on regular bond paper for an economical option. Laminate the placemats to reuse them. Print at 100% scale (no “fit to page”).',
+  about_t:'About Printables & Co.',about_d:'We design pretty, practical printables so celebrating at home is easy. We start with Christmas and will add more seasons.',
+  contact:'Contact:',license:'For personal use only. Reselling or sharing the files is not allowed.'}
+};
+let lang='es', cat='all';
+try{ const s=localStorage.getItem('lang'); lang = s || (((navigator.language||'es').slice(0,2)==='en')?'en':'es'); }catch(e){}
+const t=k=>T[lang][k];
+function setLang(l){ lang=l; try{localStorage.setItem('lang',l)}catch(e){}; render(); }
+function toast(m){const e=document.getElementById('toast');e.textContent=m;e.style.opacity=1;setTimeout(()=>e.style.opacity=0,2400);}
+function buy(id){ const p=PRODUCTS.find(x=>x.id===id); if(!p.url){toast(t('noLink'));return;} window.open(p.url,'_blank','noopener'); }
+function setCat(c){cat=c;render();}
+function goHash(){const h=location.hash.slice(1);if(!h)return;const p=PRODUCTS.find(x=>x.id===h);if(p){cat=p.cat;render();}const e=document.getElementById(h);if(e)setTimeout(()=>{e.scrollIntoView({behavior:'smooth',block:'center'});e.classList.add('ring-4','ring-gold');},100);}
+addEventListener('hashchange',goHash);
+function art(p){
+  if(p.img) return `<img src="${p.img}" alt="${p.name[lang]}" loading="lazy" class="w-full h-full object-cover">`;
+  return `<div class="w-full h-full flex flex-col items-center justify-center bg-cream-dark text-pine text-center p-4"><div class="font-serif text-3xl mb-1">${p.name[lang]}</div><div class="text-xs tracking-widest uppercase text-gold-dark">${t('soon_prev')}</div></div>`;
+}
+function render(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));
+  ['es','en'].forEach(l=>{const b=document.getElementById('lang-'+l); b.className='px-3 py-2 cursor-pointer '+(l===lang?'bg-pine text-cream':'text-pine');});
+  const cats=[['all','f_all'],['santa','f_santa'],['mesa','f_mesa']];
+  document.getElementById('filters').innerHTML=cats.map(([c,k])=>`<button onclick="setCat('${c}')" class="px-5 py-2 rounded-full text-sm font-semibold cursor-pointer border border-gold/60 ${c===cat?'bg-pine text-cream':'text-pine'}">${t(k)}</button>`).join('');
+  document.getElementById('grid').innerHTML=PRODUCTS.filter(p=>cat==='all'||p.cat===cat).map(p=>`
+   <article id="${p.id}" class="scroll-mt-28 bg-cream-card rounded-2xl border border-gold/30 shadow-card overflow-hidden flex flex-col">
+     <div class="a4 overflow-hidden">${art(p)}</div>
+     <div class="p-5 flex flex-col grow">
+       <h3 class="font-serif text-2xl text-pine font-semibold">${p.name[lang]}</h3>
+       <p class="text-sm text-charcoal/75 mt-1 grow">${p.desc[lang]}</p>
+       <div class="flex items-center justify-between mt-4">
+         <span class="font-serif text-2xl text-pine font-bold">$${p.price.toFixed(2)} <span class="text-xs font-sans text-charcoal/60">${CURRENCY}</span></span>
+         <button onclick="buy('${p.id}')" class="btn-gold text-pine font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-full shadow-gold cursor-pointer">${t('buy')}</button>
+       </div>
+     </div></article>`).join('');
+}
+render();goHash();
+</script>
+</body></html>
