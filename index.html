@@ -158,6 +158,8 @@ const PRODUCTS = [
   { id:'mesa-color', cat:'mesa', price:5.99, url:'', img:'assets/colorear-pack4.webp', name:{es:'Pack de 4 individuales para colorear', en:'Coloring placemats · set of 4'}, desc:{es:'4 individuales navideños A4 para colorear: Papá Noel, animalitos, galletas y trineo. Ideales para los más chicos.', en:'4 Christmas A4 placemats to color: Santa, forest friends, cookies and sleigh. Perfect for little ones.'} },
 ];
 
+PRODUCTS.filter(p=>p.cat==='mesa').forEach(p=>{p.desc.es+=' Tamaño A4 (29,7 × 21 cm): ideal para platos chicos o infantiles, o como salvamantel.';p.desc.en+=' A4 size (11.7 × 8.3 in): ideal for small or kids\' plates, or as a mat.';});
+
 const T = {
  es:{nav_home:'Inicio',nav_shop:'Tienda',nav_how:'Cómo comprar',nav_contact:'Contacto',nav_cta:'Ver tienda',
   hero_kicker:'Imprimibles para todo el año',hero_title:'Printables & Co.: imprimibles para celebrar en casa',hero_sub:'Compra, descarga, imprime. Hoy: Navidad, con las cartas para Papá Noel.',hero_cta:'Ver Navidad',
